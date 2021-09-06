@@ -1,5 +1,12 @@
 $(document).ready(function () {
 
+    $("#cpf").mask('000.000.000-00', {reverse: true});
+    $("#data_nascimento").mask("99/99/9999");
+    $("#telefone").inputmask({
+        mask: ["(99) 9999-9999", "(99) 99999-9999", ],
+        keepStatic: true
+    });
+
     $.getJSON('http://mendesepereira.neuroteks.com/entrevista/estados_cidades.json', function (data) {
 
         var options = '<option value="">escolha um estado</option>';
@@ -29,7 +36,5 @@ $(document).ready(function () {
             $("#cidades").html(options_cidades);
 
         }).change();
-
     });
-
 });

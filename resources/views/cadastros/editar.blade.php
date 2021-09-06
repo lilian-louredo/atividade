@@ -4,7 +4,9 @@
     Editar Cadastro
 
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script type="text/javascript" src="<?php echo asset('js/select_estados.js')?>"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.0/jquery.mask.js"></script>
+    <script type="text/javascript" src="https://rawgit.com/RobinHerbots/jquery.inputmask/3.x/dist/jquery.inputmask.bundle.js"></script>
+    <script type="text/javascript" src="<?php echo asset('js/script.js')?>"></script>
 @endsection
 
 @section('conteudo')
@@ -63,6 +65,22 @@
         </div>
 
         <div class="row mt-4">
+            <div class="col col-4">
+                <label for="estado">Estado</label>
+                <input type="text" class="form-control" name="estado" id="estado" value="{{ $cadastro->estado }}" readonly="readonly">
+            </div>
+
+            <div class="col col-4">
+                <label for="estado">Cidade</label>
+                <input type="text" class="form-control" name="cidade" id="cidade" value="{{ $cadastro->cidade }}" readonly="readonly">
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <span class="col">Confirme ou altere o estado e a cidade selecionando os campos abaixo:</span>
+        </div>
+
+        <div class="row mt-2">
             <div class="col col-4">
                 <label for="estado">Estado</label>
                 <select name="estado" class="form-control" id="estados">
